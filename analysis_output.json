@@ -1,7 +1,7 @@
 {
   "mode": "HISTORICAL",
   "window_days": 180,
-  "generated_at": "2026-01-29",
+  "generated_at": "2026-01-30",
   "thresholds": {
     "search_terms": {
       "min_clicks": 20,

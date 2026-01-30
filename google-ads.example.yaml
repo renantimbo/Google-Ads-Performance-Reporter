@@ -2,5 +2,5 @@ developer_token: "SEU_DEV_TOKEN"
 client_id: "SEU_OAUTH_CLIENT_ID"
 client_secret: "SEU_OAUTH_CLIENT_SECRET"
 refresh_token: "SEU_REFRESH_TOKEN"
-# login_customer_id: "1234567890"  # só se for MCC
+login_customer_id: "SEU_ID_DA_MCC_SEM_HIFEN"
 use_proto_plus: True

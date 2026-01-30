@@ -1,0 +1,80 @@
+**Análise de Ações**
+
+**Priorização de Ações**
+
+1. **High**: Nagano Tonic (Clickbank) #3 - Scale Winner
+2. **Medium**: CogniCare Pro (BuyGoods), Vigortrix (Buygoods), Finessa (Clickbank) - Pause or Restructure
+
+**Ação 1: Escalar Nagano Tonic (Clickbank) #3**
+
+* WHY: This campaign has a high ROAS of 1.26 and has generated conversions in the last 180 days, indicating a good potential for further growth.
+* HOW:
+	+ Step 1: Log in to Google Ads and navigate to the campaign settings.
+	+ Step 2: Increase the budget by 10-20% to allow for more ad exposure and potential conversion growth.
+
+**Validation Metric:** ROAS >= 1.25 after 7 days
+
+What could go wrong:
+
+* Increasing the budget too quickly may lead to a decrease in ROAS if the campaign is not optimized further.
+* The increased budget may not be utilized efficiently, leading to wasted spend.
+
+**Ação 2: Pausar ou Restructurar CogniCare Pro (BuyGoods), Vigortrix (Buygoods), Finessa (Clickbank)**
+
+* WHY: These campaigns have been inactive for the last 180 days, with no conversions generated, indicating a low potential for return on investment.
+* HOW:
+	+ Step 1: Log in to Google Ads and navigate to the campaign settings.
+	+ Step 2: Pause the campaign to stop further spend.
+
+**Validation Metric:** Conversions == 0 after 7 days
+
+What could go wrong:
+
+* Pausing the campaign may not be enough, and re-optimization or new targeting might be necessary for a successful return.
+* The campaign's inactivity may indicate underlying issues that need to be addressed before restarting the campaign.
+
+**Nota final**
+
+Priorizar ação de escalar Nagano Tonic (Clickbank) #3 é fundamental para maximizar o ROAS, pois esse campanha tem um desempenho alto e potencial para crescimento. As ações de pausar ou reestruturar CogniCare Pro (BuyGoods), Vigortrix (Buygoods) e Finessa (Clickbank) são necessárias para evitar perda de dinheiro e focalizar em campanhas com melhor desempenho.
+
+**Translated to Brazilian Portuguese:**
+
+Análise de Ações
+
+Priorização de Ações
+
+1. **Alto**: Nagano Tonic (Clickbank) #3 - Escalar Vencedor
+2. **Médio**: CogniCare Pro (BuyGoods), Vigortrix (Buygoods), Finessa (Clickbank) - Pausar ou Restructurar
+
+Ação 1: Escalar Nagano Tonic (Clickbank) #3
+
+* Por que: Essa campanha tem um ROAS alto de 1,26 e gerou conversões nos últimos 180 dias, indicando um bom potencial para crescimento.
+* Como:
+	+ Passo 1: Faça login no Google Ads e navegue pelas configurações da campanha.
+	+ Passo 2: Aumente o orçamento em 10-20% para permitir mais exposição de anúncios e potencial crescimento de conversões.
+
+Métrica de Validação: ROAS >= 1,25 após 7 dias
+
+O que pode dar errado:
+
+* Aumentar o orçamento muito rápido pode levar a uma diminuição do ROAS se a campanha não for otimizada mais.
+* O aumento do orçamento não será utilizado eficientemente, levando à despesa sem retorno.
+
+Ação 2: Pausar ou Restructurar CogniCare Pro (BuyGoods), Vigortrix (Buygoods), Finessa (Clickbank)
+
+* Por que: Essas campanhas estiveram inativas nos últimos 180 dias, sem gerar conversões, indicando um baixo potencial de retorno sobre o investimento.
+* Como:
+	+ Passo 1: Faça login no Google Ads e navegue pelas configurações da campanha.
+	+ Passo 2: Pausa a campanha para parar de gastar dinheiro.
+
+Métrica de Validação: Conversões == 0 após 7 dias
+
+O que pode dar errado:
+
+* Pausar a campanha pode não ser suficiente, e re-otimização ou novas abordagens podem ser necessárias para um retorno bem-sucedido.
+* A inatividade da campanha pode indicar problemas subjacentes que precisam ser endereçados antes de reiniciar a campanha.
+
+Nota final
+
+Priorizar ação de escalar Nagano Tonic (Clickbank) #3 é fundamental para maximizar o ROAS, pois essa campanha tem um desempenho alto e potencial para crescimento. As ações de pausar ou reestruturar CogniCare Pro (BuyGoods), Vigortrix (Buygoods) e Finessa (Clickbank) são necessárias para evitar perda de dinheiro e focalizar em campanhas com melhor desempenho.
+
