@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.sqlite
+google-ads.yaml
+client_secret.json
+requirements.lock.txt

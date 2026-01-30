@@ -1,0 +1,29 @@
+**Análise de Ações**
+
+Priorizando ações com base no impacto esperado sobre o ROAS:
+
+1. **Ação de alto prioridade**: SCALE_WINNER - Nagano Tonic (Clickbank) #3
+	* Por que isso é importante: O campaign está gerando uma ROAS decente e tem um grande potencial para continuar gerando conversões e valorizando investimentos.
+	* Como executar: Ajuste gradualmente o orçamento (+10-20%) ou duplique o campaign em uma estrutura mais apertada (mais palavras-chave/grupos de anúncios específicos).
+	* Risco: Não há um risco significativo, pois a ROAS é razoável e não há sinais de quebrar.
+	* Validação: ROAS >= 1.2 after 7 days.
+
+2. **Ação de médio prioridade**: SCALE_WINNER - [Duplicate into tighter structure] - Nagano Tonic (Clickbank) #3
+	* Por que isso é importante: A duplicação do campaign em uma estrutura mais apertada pode melhorar a ROAS e aumentar o valor dos investimentos.
+	* Como executar: Crie um novo campaign com as mesmas configurações do original, mas com palavras-chave/grupos de anúncios mais específicos.
+	* Risco: A duplicação pode levar a uma dispersão de recursos e não gerar conversões adicionais.
+	* Validação: ROAS >= 1.2 after 7 days.
+
+3. **Ações de baixa prioridade**:
+	* PAUSE_OR_RESTRUCTURE - CogniCare Pro (BuyGoods), Vigortrix (Buygoods) e Finessa (Clickbank)
+		+ Por que isso é importante: Esses campaigns estão gastando recursos sem gerar conversões, o que não é rentável.
+		+ Como executar: Pause os campaigns ou reestruturar as configurações para reduzir o gasto e aumentar a ROAS.
+		+ Risco: A pause pode levar a uma perda de oportunidades de conversão.
+		+ Validação: Conversions >= 0 after 7 days.
+
+**Conclusão**
+
+As principais ações para maximizar o ROAS são escalar o campaign do Nagano Tonic (Clickbank) #3 e duplicá-lo em uma estrutura mais apertada. Já os campaigns CogniCare Pro (BuyGoods), Vigortrix (Buygoods) e Finessa (Clickbank) devem ser pausados ou reestruturados para reduzir o gasto e aumentar a ROAS.
+
+**Importante**: Execute as ações com cuidado e atenção, monitorando constantemente os resultados e ajustando as estratégias de acordo.
+

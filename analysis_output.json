@@ -1,0 +1,54 @@
+{
+  "mode": "HISTORICAL",
+  "window_days": 180,
+  "generated_at": "2026-01-29",
+  "thresholds": {
+    "search_terms": {
+      "min_clicks": 20,
+      "min_cost": 30.0,
+      "conversions": 0
+    },
+    "campaign_winners": {
+      "min_roas": 1.2,
+      "min_conversions": 2.0,
+      "min_cost": 200.0
+    },
+    "campaign_losers": {
+      "min_cost": 300.0,
+      "conversions_equals": 0.0
+    }
+  },
+  "campaign_actions": [
+    {
+      "type": "SCALE_WINNER",
+      "campaign": "Nagano Tonic (Clickbank) #3",
+      "cost": 3147.67,
+      "conversions": 6.0,
+      "conversions_value": 3973.46,
+      "roas": 1.26,
+      "suggestion": "Increase budget gradually (+10–20%) or duplicate into a tighter structure (more specific keywords/ad groups)."
+    },
+    {
+      "type": "PAUSE_OR_RESTRUCTURE",
+      "campaign": "CogniCare Pro (BuyGoods)",
+      "cost": 514.41,
+      "conversions": 0.0,
+      "why": "High spend with zero conversions in last 180 days (threshold: cost>=300.0)"
+    },
+    {
+      "type": "PAUSE_OR_RESTRUCTURE",
+      "campaign": "Vigortrix (Buygoods)",
+      "cost": 480.87,
+      "conversions": 0.0,
+      "why": "High spend with zero conversions in last 180 days (threshold: cost>=300.0)"
+    },
+    {
+      "type": "PAUSE_OR_RESTRUCTURE",
+      "campaign": "Finessa (Clickbank)",
+      "cost": 467.85,
+      "conversions": 0.0,
+      "why": "High spend with zero conversions in last 180 days (threshold: cost>=300.0)"
+    }
+  ],
+  "search_term_actions": []
+}
