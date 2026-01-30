@@ -32,7 +32,6 @@ df = pd.read_sql_query(query, con)
 print("\nROAS por campanha (últimos 180 dias):")
 print(df)
 
-# ✅ SALVA O BASELINE
 df.to_csv(OUTPUT_PATH, index=False)
 
 print(f"\nBaseline salvo em: {OUTPUT_PATH.resolve()}")
