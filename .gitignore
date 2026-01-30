@@ -4,3 +4,5 @@ __pycache__/
 google-ads.yaml
 client_secret.json
 requirements.lock.txt
+reports/*
+!reports/.gitkeep
