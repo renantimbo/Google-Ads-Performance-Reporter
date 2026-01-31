@@ -7,23 +7,23 @@ Outputs a structured JSON with recommended actions for:
 - Campaign scaling candidates (winners)
 - Campaign pause/restructure candidates (losers)
 
-Assumptions (per your project):
-- SQLite file is at repo root: data.sqlite
+Assumptions:
+- SQLite file is at repo root (settings.db_path)
 - Tables: campaign_daily, search_term_daily
 - Conversion value column in DB: conversions_value
 """
 
 import sqlite3
-from pathlib import Path
 from datetime import date, timedelta
 import json
+from src.config import settings
 
 # =========================
 # MODE CONFIGURATION
 # =========================
 # Switch between:
-# - "HISTORICAL": for initial/baseline evaluation using long window + stricter thresholds
-# - "LIVE": for weekly ops (7-day decision window) + more aggressive thresholds
+# - "HISTORICAL": baseline evaluation using long window + stricter thresholds
+# - "LIVE": weekly ops (decision window) + more aggressive thresholds
 MODE = "HISTORICAL"  # "HISTORICAL" or "LIVE"
 
 CONFIG = {
@@ -44,7 +44,8 @@ CONFIG = {
         },
     },
     "LIVE": {
-        "window_days": 7,
+        # 🔑 window_days agora vem da config central
+        "window_days": settings.analysis_window_days,
         "search_terms": {
             "min_clicks": 10,
             "min_cost": 20.0,  # BRL
@@ -62,9 +63,9 @@ CONFIG = {
 }
 
 # =========================
-# PATHS
+# PATHS (centralizados)
 # =========================
-DB_PATH = Path("data.sqlite")
+DB_PATH = settings.db_path
 
 
 def run_analysis() -> dict:
@@ -110,7 +111,6 @@ def run_analysis() -> dict:
     # =========================
     # 1) SEARCH TERMS – NEGATIVES
     # =========================
-    # Note: conversions_value isn't used for negative suggestion; we care about spend w/ 0 conv in window.
     cur.execute(
         """
         SELECT
@@ -141,8 +141,6 @@ def run_analysis() -> dict:
     # =========================
     # 2) CAMPAIGNS – WINNERS (SCALE)
     # =========================
-    # ROAS = conversions_value / cost
-    # We compute ROAS in SQL to filter winners efficiently.
     cur.execute(
         """
         SELECT
@@ -215,7 +213,9 @@ def run_analysis() -> dict:
 
 if __name__ == "__main__":
     actions = run_analysis()
-    with open("analysis_output.json", "w", encoding="utf-8") as f:
+    output_path = settings.repo_root / "analysis_output.json"
+
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(actions, f, indent=2, ensure_ascii=False)
 
     print(json.dumps(actions, indent=2, ensure_ascii=False))

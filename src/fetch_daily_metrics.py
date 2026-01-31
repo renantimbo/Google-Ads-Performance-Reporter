@@ -1,8 +1,7 @@
 from google.ads.googleads.client import GoogleAdsClient
 from src.data.db import init_db, connect
 from src.data.client_accounts import get_active_client_accounts
-
-FETCH_DAYS = 30
+from src.config import settings
 
 QUERY = f"""
 SELECT
@@ -15,13 +14,13 @@ SELECT
   metrics.conversions,
   metrics.conversions_value
 FROM campaign
-WHERE segments.date DURING LAST_{FETCH_DAYS}_DAYS
+WHERE segments.date DURING LAST_{settings.fetch_days}_DAYS
 """
 
 def main(customer_id: str):
     init_db()
 
-    client = GoogleAdsClient.load_from_storage("google-ads.yaml")
+    client = GoogleAdsClient.load_from_storage(str(settings.ads_config_path))
     ga_service = client.get_service("GoogleAdsService")
 
     rows = ga_service.search_stream(
