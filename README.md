@@ -30,24 +30,25 @@ Designed as a **production-minded portfolio project**, prioritizing correctness,
 
 ## 🏗️ High-Level Architecture
 
+```text
 Google Ads API
-│
-▼
+      |
+      v
 Data Fetchers (per client account)
-│
-▼
+      |
+      v
 SQLite (data.sqlite)
-│
-▼
+      |
+      v
 Rule-Based Analysis (analysis_rules.py)
-│
-▼
+      |
+      v
 Structured JSON (analysis_output.json)
-│
-▼
+      |
+      v
 Local LLM (Ollama)
-│
-▼
+      |
+      v
 Markdown Report (reports/)
 
 
@@ -55,27 +56,27 @@ Markdown Report (reports/)
 
 ## 📁 Project Structure
 
+```text
 .
-├── data.sqlite # SQLite database (generated)
-├── reports/ # LLM-generated recommendations (gitignored)
+├── data.sqlite                  # SQLite database (generated)
+├── reports/                     # LLM-generated recommendations (gitignored)
 │
 ├── src/
-│ ├── run_all.py # Pipeline orchestrator
-│ │
-│ ├── config.py # Centralized configuration (paths, windows, thresholds)
-│ │
-│ ├── data/
-│ │ ├── db.py # DB connection + schema initialization
-│ │ ├── schema.sql # SQLite schema (idempotent)
-│ │ └── client_accounts.py # MCC client account discovery & persistence
-│ │
-│ ├── fetch_daily_metrics.py # Campaign-level metrics ingestion
-│ ├── fetch_search_terms.py # Search term performance ingestion
-│ │
-│ ├── analysis_rules.py # Rule-based performance analysis
-│ └── llm_recommender.py # Local LLM recommendation generator
+│   ├── run_all.py               # Pipeline orchestrator
+│   ├── config.py                # Centralized configuration
+│   │
+│   ├── data/
+│   │   ├── db.py                # DB connection + schema initialization
+│   │   ├── schema.sql           # SQLite schema (idempotent)
+│   │   └── client_accounts.py   # MCC client account discovery & persistence
+│   │
+│   ├── fetch_daily_metrics.py   # Campaign-level metrics ingestion
+│   ├── fetch_search_terms.py    # Search term performance ingestion
+│   │
+│   ├── analysis_rules.py        # Rule-based performance analysis
+│   └── llm_recommender.py       # Local LLM recommendation generator
 │
-├── google-ads.yaml # Google Ads API credentials (not committed)
+├── google-ads.yaml               # Google Ads API credentials (not committed)
 └── README.md
 
 
@@ -195,6 +196,8 @@ pip install -r requirements.txt
 
 # Run full pipeline
 python -m src.run_all
+```
+
 Outputs:
 
 data.sqlite (updated)
