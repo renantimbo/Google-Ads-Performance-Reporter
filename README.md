@@ -50,7 +50,7 @@ Local LLM (Ollama)
       |
       v
 Markdown Report (reports/)
-
+```
 
 ---
 
@@ -78,7 +78,7 @@ Markdown Report (reports/)
 │
 ├── google-ads.yaml               # Google Ads API credentials (not committed)
 └── README.md
-
+```
 
 ---
 
