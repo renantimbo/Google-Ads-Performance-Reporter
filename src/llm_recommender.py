@@ -5,13 +5,41 @@ from datetime import date
 from pathlib import Path
 
 from src.config import settings
+from src.rag.retrieve import retrieve_context
 
 MODEL = "llama3:8b"
-
 ANALYSIS_FILE = settings.repo_root / "analysis_output.json"
 
+RAG_TOP_K = 5
+RAG_MAX_CHARS = 6000
+RAG_QUERY = "weekly google ads optimization decisions roas winners losers negatives"
 
-def build_prompt(analysis: dict) -> str:
+
+def _format_rag_context(items: list[dict]) -> str:
+    """Format retrieved RAG docs into a compact context block for the prompt."""
+    if not items:
+        return "No past context found (first run or memory not indexed yet)."
+
+    chunks = []
+    total = 0
+    for c in items:
+        header = f"[{c.get('doc_type')} | {c.get('created_at')} | score={c.get('score')}]"
+        body = (c.get("content") or "").strip()
+        block = f"{header}\n{body}\n"
+
+        if total + len(block) > RAG_MAX_CHARS:
+            remaining = max(0, RAG_MAX_CHARS - total)
+            if remaining > 200:
+                chunks.append(block[:remaining] + "\n[...truncated...]\n")
+            break
+
+        chunks.append(block)
+        total += len(block)
+
+    return "\n".join(chunks).strip()
+
+
+def build_prompt(analysis: dict, rag_context: str) -> str:
     analysis_json = json.dumps(analysis, indent=2)
 
     window_days = analysis.get("window_days", 7)
@@ -55,6 +83,15 @@ Completeness rules:
 - You MUST provide a detailed section for EACH item.
 - You are NOT allowed to use placeholders or omit actions.
 
+Memory rules (RAG context):
+- You will receive past runs (summaries/recommendations).
+- Do NOT repeat the exact same recommendation if it was attempted recently and failed.
+- If you repeat a recommendation, explain WHY it still makes sense now.
+- Prefer consistency with past decisions unless current data strongly contradicts them.
+
+Past context (RAG results):
+{rag_context}
+
 Output format (MANDATORY — follow exactly):
 
 # Priority Summary
@@ -79,6 +116,7 @@ Output format (MANDATORY — follow exactly):
 Input data (JSON):
 {analysis_json}
 """.strip()
+
 
 def run_llm(prompt: str) -> str:
     ollama_bin = shutil.which("ollama")
@@ -108,17 +146,30 @@ def main():
         )
 
     analysis = json.loads(ANALYSIS_FILE.read_text(encoding="utf-8"))
-    prompt = build_prompt(analysis)
+
+    try:
+        items = retrieve_context(query=RAG_QUERY, top_k=RAG_TOP_K)
+        rag_context = _format_rag_context(items)
+    except Exception as e:
+        rag_context = f"RAG retrieval failed: {e}"
+
+    prompt = build_prompt(analysis, rag_context)
     response = run_llm(prompt)
 
     settings.reports_dir.mkdir(parents=True, exist_ok=True)
-
     out_md = settings.reports_dir / f"recommendations_{date.today().isoformat()}.md"
     out_md.write_text(response + "\n", encoding="utf-8")
 
     print("\n===== LLM RECOMMENDATIONS =====\n")
     print(response)
     print(f"\nSaved report to: {out_md.resolve()}")
+
+    # Optional: automatically index this run into memory after generating the report.
+    # Recommended to call indexing from run_all.py, but this helps when running llm_recommender alone.
+    # Uncomment if you want auto-index here:
+    #
+    # from src.rag.index_run import main as index_main
+    # index_main()
 
 
 if __name__ == "__main__":

@@ -1,3 +1,5 @@
 google-ads
 python-dotenv
 pandas
+sentence-transformers
+numpy

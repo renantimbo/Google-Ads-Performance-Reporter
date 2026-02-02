@@ -17,6 +17,7 @@ def main():
     run_step("Fetch search terms", [PYTHON, "-m", "src.fetch_search_terms"])
     run_step("Run analysis rules", [PYTHON, "-m", "src.analysis_rules"])
     run_step("Run LLM recommender", [PYTHON, "-m", "src.llm_recommender"])
+    run_step("Index RAG memory", ["python", "-m", "src.rag.index_run"])
     print("\nDONE")
 
 if __name__ == "__main__":
